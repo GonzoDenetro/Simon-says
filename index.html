@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/tablet.css" media="(min-width: 630px)">
+    <title>Simon dice</title>
+</head>
+<body>
+    <main>
+        <section class="title-container">
+            <h1></h1>
+        </section>
+        <section class="game-board">
+            <div id="azul" class="color azul left" data-color="azul"></div>
+            <div id="morado" class="color morado right"></div>
+            <div id="naranja" class="color naranja left"></div>
+            <div id="verde" class="color verde right"></div>
+            <button id='btnEmpezar' class="button-start" onclick="empezarJuego()">Empezar juego!</button>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

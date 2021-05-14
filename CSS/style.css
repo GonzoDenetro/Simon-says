@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+:root {
+    --blue: #0075F2;
+    --light-blue: #00BDF2;
+    --orange: #FE9000;
+    --light-orange: #FEC011;
+    --background: #252627;
+    --purple: #6320EE;
+    --light-purple: #6357EE;
+    --green: #70e000;
+    --light-green: #8AE039;
+}
+main {
+    width: 100%;
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    background: var(--background);
+}
+.game-board {
+    min-width: 270px;
+    min-height: 300px;
+    margin: 0 auto ;
+    border-radius: 50%;
+    background: #0075F2;
+}
+.color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.azul {
+    background: var(--blue);
+    border-top-left-radius: 100%;
+}
+.azul .light {
+    background: var(--light-blue);
+}
+.morado {
+    background: var(--purple);
+    border-top-right-radius: 100%;
+}
+.morado .light {
+    background-color: var(--light-purple);
+}
+.verde {
+    background: var(--green);
+    border-bottom-right-radius: 100%;
+}
+.verde .light {
+    background: var(--light-green);
+}
+.naranja {
+    background: var(--orange);
+    border-bottom-left-radius: 100%;
+}
+.naranja .light {
+    background-color: var(--light-orange);
+}
+.button-start {
+    cursor: pointer;
+    width: 320px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-bottom: 4px solid #c4c6c7;
+    border-radius: 8px;
+    font-size: 3em;
+    position: absolute;
+    top: calc(50% - 6%);
+    left: calc(50% - 210px);
+    transition: .5s;
+    outline: none;
+}
+.button-start:hover {
+        color: #ecf0f1;
+        background: #2c3e50;
+        border-bottom: 4px solid #1f3346;
+        transform: scale(1.1);
+}
+.button-start:active {
+    transform: scale(.95);
+  }
+  .hide {
+      display: none;
+      transition: .5s;
+  }
