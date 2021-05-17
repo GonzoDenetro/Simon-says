@@ -94,10 +94,23 @@ main {
 .button-start:active {
     transform: scale(.95);
   }
+.score-container {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.score-container p {
+    font-size: 1.8rem;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
   .hide {
       display: none;
       transition: .5s;
   }
   .cursor {
       cursor: pointer;
+  }
+  .swal-modal {
+      font-family: Arial, Helvetica, sans-serif;
   }

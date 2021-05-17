@@ -15,12 +15,16 @@
         </section>
         <section class="game-board">
             <div id="azul" class="color azul left" data-color="azul"></div>
-            <div id="morado" class="color morado right"></div>
-            <div id="naranja" class="color naranja left"></div>
-            <div id="verde" class="color verde right"></div>
+            <div id="morado" class="color morado right" data-color="morado"></div>
+            <div id="naranja" class="color naranja left" data-color="naranja"></div>
+            <div id="verde" class="color verde right" data-color="verde"></div>
             <button id='btnEmpezar' class="button-start" onclick="empezarJuego()">Empezar juego!</button>
         </section>
+        <section class="score-container">
+            <p>Score: <span id="score"></span></p>
+        </section>
     </main>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
