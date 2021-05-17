@@ -10,10 +10,10 @@
     --orange: #FE9000;
     --light-orange: #FEC011;
     --background: #252627;
-    --purple: #6320EE;
-    --light-purple: #6357EE;
+    --purple: #5603ad;
+    --light-purple: #9d4edd; 
     --green: #70e000;
-    --light-green: #8AE039;
+    --light-green: #b5f44a;
 }
 main {
     width: 100%;
@@ -45,28 +45,28 @@ main {
     background: var(--blue);
     border-top-left-radius: 100%;
 }
-.azul .light {
+.azul.light {
     background: var(--light-blue);
+}
+.morado.light {
+    background-color: var(--light-purple);
 }
 .morado {
     background: var(--purple);
     border-top-right-radius: 100%;
 }
-.morado .light {
-    background-color: var(--light-purple);
-}
 .verde {
     background: var(--green);
     border-bottom-right-radius: 100%;
 }
-.verde .light {
+.verde.light {
     background: var(--light-green);
 }
 .naranja {
     background: var(--orange);
     border-bottom-left-radius: 100%;
 }
-.naranja .light {
+.naranja.light {
     background-color: var(--light-orange);
 }
 .button-start {
@@ -97,4 +97,7 @@ main {
   .hide {
       display: none;
       transition: .5s;
+  }
+  .cursor {
+      cursor: pointer;
   }
