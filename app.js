@@ -7,6 +7,7 @@ const morado = document.getElementById('morado');
 const score = document.getElementById('score')
 const ULTIMO_NIVEL = 10;
 
+
 class Juego{
     constructor(){
         this.inicializar = this.inicializar.bind(this)
@@ -121,6 +122,7 @@ class Juego{
         
         if(numeroColor === this.secuencia[this.numeroDeAciertos]){
             this.numeroDeAciertos++;
+            score.innerHTML = this.numeroDeAciertos
             console.log(this.numeroDeAciertos)
             
             if(this.numeroDeAciertos == this.nivel){
