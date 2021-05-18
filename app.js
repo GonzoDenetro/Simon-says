@@ -8,6 +8,12 @@ const score = document.getElementById('score')
 const ULTIMO_NIVEL = 10;
 
 
+//Audio
+const audio_lose = document.getElementById('audio_mario')
+const audio_correct = document.getElementById('audio_correct')
+const audio_iluminar_color = document.getElementById('iluminar_color')
+const audio_victory = document.getElementById('victory')
+
 class Juego{
     constructor(){
         this.inicializar = this.inicializar.bind(this)
@@ -28,6 +34,12 @@ class Juego{
             naranja,
             verde,
             morado
+        }
+        this.sounds = {
+            audio_lose,
+            audio_correct,
+            audio_iluminar_color,
+            audio_victory
         }
     }
 
@@ -79,7 +91,10 @@ class Juego{
         for(let i = 0; i < this.nivel; i++){
             const color = this.transformarNumeroAColor(this.secuencia[i])
             console.log(color)
-            setTimeout(()=> this.iluminarColor(color), 1000 * i) 
+            setTimeout(()=> {
+                this.iluminarColor(color)
+                this.sounds.audio_iluminar_color.play()            
+}, 1000 * i) 
         }
     }
 
@@ -87,6 +102,7 @@ class Juego{
         /* console.log(this.colores) */
         /* console.log(this.colores[color]) */
         this.colores[color].classList.add('light');
+        /* this.sounds.audio_iluminar_color.play() */
         setTimeout(() => this.apagarColor(color), 350);
         //console.log(this.colores[color])
     }
@@ -131,21 +147,28 @@ class Juego{
                 this.eliminarEventosAlClick();
                 if(this.nivel == (ULTIMO_NIVEL + 1) ){
                     this.ganoElJuego();
+                    this.sounds.audio_victory.play()
+                    this.numeroDeAciertos = 0
+                    score.innerHTML = this.numeroDeAciertos
                 }
                 else{
                     swal('Correcto!', `Pasas al nivel: ${this.nivel}`)
+                    this.sounds.audio_correct.play()
                     setTimeout(this.siguienteNivel, 2000)
                 }
             } 
         } else {
             this.perdioElJuego()
+            this.numeroDeAciertos = 0
+            score.innerHTML = this.numeroDeAciertos
+            this.sounds.audio_lose.play()
         }
     }
 
     ganoElJuego() {
         swal( "Ganaste", 'Felicidades!', 'success')
         .then(()=> {
-            this.inicializar})
+            this.inicializar()})
     }
     
     perdioElJuego(){
